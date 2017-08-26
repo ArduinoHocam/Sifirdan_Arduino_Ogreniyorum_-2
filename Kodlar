@@ -1,0 +1,33 @@
+//ARDUINO HOCAM
+//SIFIRDAN ARDUINO OGRENIYORUM BOLUM #2
+
+int mavi = 7;
+int sari = 6;
+int kirmizi = 5;
+int pot = A0;
+int potdeger;
+void setup() {
+
+  pinMode(mavi, OUTPUT);
+  pinMode(sari, OUTPUT);
+  pinMode(kirmizi, OUTPUT);
+  Serial.begin(9600); //seri haberleşme için aktarım hızı
+}
+
+void loop() {
+
+
+  potdeger = analogRead(pot);
+  potdeger = map(potdeger, 0, 1023, 0, 255);
+
+  analogWrite(7, potdeger);
+  analogWrite(6, potdeger);
+  analogWrite(5, potdeger);
+
+Serial.print("potdegeri:  ");
+Serial.println(potdeger);
+
+
+
+
+}
